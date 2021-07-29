@@ -1,8 +1,10 @@
 package day1;
 
-import com.google.common.collect.Maps;
 
+import java.nio.file.Files;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Callable;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,6 +14,7 @@ import java.util.Map;
  * description:
  */
 public class LRUDemo {
+
 
 
     public static class ListNode {
@@ -30,7 +33,7 @@ public class LRUDemo {
     ListNode last;
     int limit = 4;
 
-    Map<String, ListNode> hashMap = Maps.newHashMap();
+    Map<String, ListNode> hashMap = new HashMap<>();
 
     public void add(String key, Integer val) {
         ListNode existNode = hashMap.get(key);
@@ -96,5 +99,8 @@ public class LRUDemo {
         }
         hashMap.remove(key);
     }
+
+
+
 }
 
